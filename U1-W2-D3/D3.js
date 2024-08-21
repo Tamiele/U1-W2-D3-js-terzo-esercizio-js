@@ -131,19 +131,39 @@ console.log("femaleCharacters", femaleCharacters);
   Ad ognuna di queste proprietà assegna come valore un array vuoto.
 */
 
-/*const eyeColor = {
+const eyeColor = {
   blue: [],
   yellow: [],
   brown: [],
   red: [],
-  blueGrey: [],
+  "blue-Grey": [],
 };
 
 /* ESERCIZIO 5
   Utilizza uno switch statement per inserire uno ad uno gli oggetti dei personaggi di "starWarsCharacters" negli array relativi al colore degli occhi precedentemente creati.
   Ogni personaggio dovrà finire nell'array corrispondente al suo colore degli occhi (al valore della sua proprietà "eye_color").
 */
-
+for (let i = 0; i < starWarsCharacters.length; i++) {
+  const character = starWarsCharacters[i];
+  switch (character.eye_color) {
+    case "blue":
+      eyeColor.blue.push(character);
+      break;
+    case "yellow":
+      eyeColor.yellow.push(character);
+      break;
+    case "brown":
+      eyeColor.brown.push(character);
+      break;
+    case "red":
+      eyeColor.red.push(character);
+      break;
+    case "blue-grey":
+      eyeColor["blue-grey"].push(character);
+      break;
+  }
+}
+console.log(eyeColor);
 /* ESERCIZIO 6
   Usa un while loop per calcolare la massa totale dell'equipaggio. Salvala in una variabile chiamata "crewMass".
 */
@@ -170,10 +190,11 @@ console.log(crewMass);
 /* ESERCIZIO 8
   Usa un for loop per cambiare il valore della proprietà "gender" di alcuni personaggi dal valore "n/a" a "robot" (Tip: puoi effettuare la riassegnazione del valore corrispondente o creare un nuovo array)
 */
-for (i = 0; i < starWarsCharacters.length; i++)
+for (let i = 0; i < starWarsCharacters.length; i++)
   if (starWarsCharacters[i].gender === "n/a") {
+    starWarsCharacters[i].gender = "robot";
   }
-
+console.log(starWarsCharacters);
 /* --EXTRA-- ESERCIZIO 9
   Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "charactersNames" le stringhe corrispondenti a personaggi con lo stesso nome.
   Una volta fatto crea un console.log per controllare la proprietà length di "charactersNames" prima e dopo l'operazione.
